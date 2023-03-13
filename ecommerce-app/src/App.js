@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout/layout";
 import { Home, Contact, Cart } from "./components/navigation/nav";
-import { API } from "./components/api/api";
+import { Api } from "./components/api/api";
 
 function App() {
-  const { data, isLoading, isError } = API(
+  const { data, isLoading, isError } = Api(
     "https://api.noroff.dev/api/v1/online-shop"
   );
 

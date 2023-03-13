@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function API() {
+export function Api(url) {
     const [data, setData] = useState([]);
     const [isLoading, setLoad] = useState([false]);
     const [isError, setError] = useState([false]);
