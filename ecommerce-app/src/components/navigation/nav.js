@@ -29,3 +29,12 @@ export function Nav() {
         </nav>
     )
 }
+
+export function Header() {
+    return (
+        <header>
+            <div>Header</div>
+            <Nav />
+        </header>
+    )
+}
