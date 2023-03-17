@@ -14,7 +14,12 @@ function App() {
   }
 
   if (isError) {
-    return <div>Error</div>
+    return (
+      <div>
+        <div>Error</div>
+        <div>Bitch</div>
+      </div>
+    )
   }
 
   return (
