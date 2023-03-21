@@ -19,9 +19,13 @@ export function Products() {
       }
     return (
         <div>
-            <div>{data.title}</div>
-            <div>{data.imageUrl}</div>
-            <div>{data.price}</div>
+            {data.map((product) => (
+                <div>
+                    <div>{product.title}</div>
+                    <img src={product.imageUrl} alt="product image" />
+                    <div>{product.price}</div>
+                </div>
+            ))}
         </div>
     )
 }
