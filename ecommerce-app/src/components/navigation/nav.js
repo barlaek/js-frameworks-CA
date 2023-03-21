@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
+import { Products } from '../products/products'
 
 export function Home() {
-    return <div>Home</div>
+    return (
+        <div>
+            <div>Home</div>
+            <div><Products /></div>
+        </div>
+    )
 }
 
 export function Contact() {
