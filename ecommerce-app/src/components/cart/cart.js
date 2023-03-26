@@ -1,10 +1,6 @@
 import React, { useReducer } from "react";
 import { Api } from "../api/api";
 
-const { data } = Api(
-    "https://api.noroff.dev/api/v1/online-shop"
-  );
-
 export const initialState = { cart: [], total: 0 };
 
 export function reducer(state, action) {
@@ -75,7 +71,12 @@ export function reducer(state, action) {
 
 export function Cart() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const products = data;
+    const { data, isLoading, isError } = Api(
+        "https://api.noroff.dev/api/v1/online-shop"
+      );
+
+    const products = { data };
+    console.log(products)
     return (
         <div>
             {products.map((product) => (
