@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ContactForm } from '../contact/contact'
 import { Products } from '../products/products'
+import { Cart } from '../cart/cart'
 
 export function Home() {
     return (
@@ -20,8 +21,13 @@ export function Contact() {
     )
 }
 
-export function Cart() {
-    return <div>Cart</div>
+export function CartContainer() {
+    return (
+        <div>
+            <div>Cart</div>
+            <div><Cart /></div>
+        </div>
+    )
 }
 
 export function Nav() {

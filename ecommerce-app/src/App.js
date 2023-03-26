@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout/layout";
-import { Home, Contact, Cart } from "./components/navigation/nav";
+import { Home, Contact, CartContainer } from "./components/navigation/nav";
 import { Product } from "./components/products/product";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />}/>
         <Route path="contact" element={<Contact />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="cart" element={<CartContainer />} />
         <Route path="/:id" element={<Product />} />
       </Route>
     </Routes>
