@@ -17,14 +17,15 @@ export function Products() {
           </div>
         )
       }
+      
     return (
         <div>
             {data.map((product) => (
-                <div>
+                <Link to ="/:id">
                     <div>{product.title}</div>
                     <img src={product.imageUrl} alt="product image" />
                     <div>{product.price}</div>
-                </div>
+                </Link>
             ))}
         </div>
     )
