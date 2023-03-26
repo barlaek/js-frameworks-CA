@@ -1,4 +1,7 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { Api } from "../api/api";
+
 
 export function Products() {
     const { data, isLoading, isError } = Api(
