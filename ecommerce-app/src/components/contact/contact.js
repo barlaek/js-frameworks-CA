@@ -26,7 +26,7 @@ const schema = yup
 
 export function ContactForm() {
     const {
-        contact,
+        register,
         handleSubmit,
         formState: { errors },
     } = useForm({
@@ -39,14 +39,15 @@ export function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...contact("fullName")} />
+            <input {...register("fullName")} />
             <p>{errors.fullName?.message}</p>
-            <input {...contact("subject")} />
+            <input {...register("subject")} />
             <p>{errors.subject?.message}</p>
-            <input {...contact("email")} />
+            <input {...register("email")} />
             <p>{errors.email?.message}</p>
-            <input {...contact("body")} />
+            <input {...register("body")} />
             <p>{errors.body?.message}</p>
+            <input type="submit" />
         </form>
     );
     }
