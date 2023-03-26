@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ContactForm } from '../contact/contact'
 import { Products } from '../products/products'
 
 export function Home() {
@@ -11,7 +12,12 @@ export function Home() {
 }
 
 export function Contact() {
-    return <div>Contact</div>
+    return (
+        <div>
+            <div>Contact</div>
+            <div><ContactForm /></div>
+        </div>
+    )
 }
 
 export function Cart() {
