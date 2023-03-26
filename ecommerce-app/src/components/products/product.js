@@ -37,12 +37,12 @@ export function Product() {
 
     return (
         <div>
-            <div>{data.imageUrl}</div>
+            <img src={data.imageUrl} alt="product image"/>
             <div>{data.title}</div>
             <div>{data.description}</div>
             <div>{data.rating}</div>
             <div>{data.price}</div>
-            <div>{data.map((review) => (
+            <div>{data.reviews.map((review) => (
                 <div>
                     <div>{review.username}</div>
                     <div>{review.rating}</div>
