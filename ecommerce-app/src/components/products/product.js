@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AddToCart } from "../cart/cart";
 
 export function Product() {
     const [data, setData] = useState(null);
