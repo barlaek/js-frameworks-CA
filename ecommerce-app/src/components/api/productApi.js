@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export function Productapi() {
+export function Product() {
     const {data, setData} = useState(null);
     const {isLoading, setIsLoading} = useState(false);
     const {Error, setIsError} = useState(false);
