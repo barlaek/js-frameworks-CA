@@ -37,7 +37,7 @@ export function Product() {
 
     return (
         <div>
-            <img src={data.imageUrl} alt="product image"/>
+            <img src={data.imageUrl} alt="product"/>
             <div>{data.title}</div>
             <div>{data.description}</div>
             <div>{data.rating}</div>

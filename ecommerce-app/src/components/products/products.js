@@ -26,7 +26,7 @@ export function Products() {
             {data.map((product) => (
                 <Link to ={`/${product.id}`}>
                     <div>{product.title}</div>
-                    <img src={product.imageUrl} alt="product image" />
+                    <img src={product.imageUrl} alt="product" />
                     <div>{product.price}</div>
                 </Link>
             ))}

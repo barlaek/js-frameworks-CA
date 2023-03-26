@@ -30,7 +30,7 @@ export function ContactForm() {
         handleSubmit,
         formState: { errors },
     } = useForm({
-    resolver: yupResolver(schema),
+        resolver: yupResolver(schema),
     });
 
     function onSubmit(data) {
@@ -48,5 +48,5 @@ export function ContactForm() {
             <input {...contact("body")} />
             <p>{errors.body?.message}</p>
         </form>
-    )
+    );
     }
