@@ -79,8 +79,7 @@ export function Cart() {
         return <div>Loading</div>
     }
 
-    const products = Api();
-    console.log(products)
+    const products = initialState;
     return (
         <div>
             {products.map((product) => (
