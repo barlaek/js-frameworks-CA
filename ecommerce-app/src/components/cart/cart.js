@@ -75,7 +75,11 @@ export function Cart() {
         "https://api.noroff.dev/api/v1/online-shop"
       );
 
-    const products = { data };
+    if(initialState) {
+        return <div>Loading</div>
+    }
+
+    const products = Api();
     console.log(products)
     return (
         <div>
