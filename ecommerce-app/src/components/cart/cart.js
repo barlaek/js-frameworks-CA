@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useReducer} from "react";
 
 const Cart = ({ cartItems }) => {
-    const totalPrice = cartItems.reduce((acc, cur) => acc + cur.price * cur.quantity );
+    const totalPrice = cartItems.useReducer((acc, cur) => acc + cur.price * cur.quantity );
 
     return (
         <div>

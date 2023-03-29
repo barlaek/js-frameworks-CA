@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Cart from '../cart/cart'
 import { ContactForm } from '../contact/contact'
 import { Products } from '../products/products'
 
@@ -24,7 +25,7 @@ export function CartContainer() {
     return (
         <div>
             <div>Cart</div>
-            <div></div>
+            <div><Cart /></div>
         </div>
     )
 }

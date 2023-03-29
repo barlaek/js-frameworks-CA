@@ -10,12 +10,16 @@ const CartContextProvider = ({ children }) => {
 
         if (itemsIndex !== -1) {
             const newCartItems = [...cartItems];
-            newCartItems[itemsIndex].quantity += 1;
+            newCartItems[itemsIndex].quantity = 1;
             setCartItems(newCartItems);
+            console.log(setCartItems)
         } else {
             setCartItems([...cartItems, {...product, quantity: 1}]);
+            console.log(setCartItems)
         }
     };
+    console.log(setCartItems)
+
 
     return (
         <CartContext.Provider value={{cartItems, addToCart}}>
