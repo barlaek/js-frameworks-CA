@@ -1,4 +1,4 @@
-import Reac, { useContext } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Api } from "../api/api";
 import { CartContext } from "../cart/cartContext";
@@ -19,7 +19,6 @@ export function Product() {
         return (
           <div>
             <div>Error</div>
-            <div>Bitch</div>
           </div>
         )
       }

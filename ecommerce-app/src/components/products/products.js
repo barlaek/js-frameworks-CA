@@ -16,7 +16,6 @@ export function Products() {
         return (
           <div>
             <div>Error</div>
-            <div>Bitch</div>
           </div>
         )
       }
