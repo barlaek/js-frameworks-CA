@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Api } from "../api/api";
-import { CartContext } from "../cart/cartContext";
 
 
 export function Products() {
-    const { cartItems, addToCart } = useContext(CartContext)
     const { data, isLoading, isError } = Api(
         "https://api.noroff.dev/api/v1/online-shop"
       );
