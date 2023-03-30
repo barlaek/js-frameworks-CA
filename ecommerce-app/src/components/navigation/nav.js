@@ -2,19 +2,27 @@ import { Link } from 'react-router-dom'
 import Cart from '../cart/cart'
 import { useCartState } from '../cart/cartContext'
 import { ContactForm } from '../contact/contact'
-// import { Products } from '../products/products'
+import { Products } from '../products/products'
+import { Api } from '../api/api'
 
 export function Home() {
-    const state = useCartState();
+    const { data, isLoading, isError } = Api(
+        "https://api.noroff.dev/api/v1/online-shop"
+      );
 
-    console.log(state.products)
+      if(isLoading) {
+        return <div>Loading</div>
+      }
+
+      if(isError) {
+        return <div>Error</div>
+      }
     return (
         <div>
             <div>Home</div>
-            {/* <div><Products /></div> */}
-            {/* { products.map((product) => {
-                return <div>{product.title}</div>
-            })} */}
+            {data.map((product) => (
+                <Products product={product}/>
+            ))}
         </div>
     )
 }
