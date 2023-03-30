@@ -5,9 +5,9 @@ import { ContactForm } from '../contact/contact'
 // import { Products } from '../products/products'
 
 export function Home() {
-    const { state } = useCartState();
+    const state = useCartState();
 
-    console.log(state)
+    console.log(state.products)
     return (
         <div>
             <div>Home</div>
