@@ -22,6 +22,8 @@ const CartContextProvider = ({ children }) => {
         cart: []
     })
 
+    console.log(state)
+
     return (
         <CartContext.Provider value={{state, dispatch}}>
             {children}

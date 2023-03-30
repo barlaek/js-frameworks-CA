@@ -2,16 +2,19 @@ import { Link } from 'react-router-dom'
 import Cart from '../cart/cart'
 import { CartState } from '../cart/cartContext'
 import { ContactForm } from '../contact/contact'
-import { Products } from '../products/products'
+// import { Products } from '../products/products'
 
 export function Home() {
-    const { state } = CartState();
+    const { state: { products } } = CartState();
 
-    console.log(state)
+    console.log(products)
     return (
         <div>
             <div>Home</div>
             {/* <div><Products /></div> */}
+            {/* { products.map((product) => {
+                return <div>{product.title}</div>
+            })} */}
         </div>
     )
 }
