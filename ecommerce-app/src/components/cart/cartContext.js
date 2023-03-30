@@ -1,31 +1,36 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
+import { Api } from "../api/api";
+import { reducer } from "./reducer";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
+    const { data } = Api(
+        "https://api.noroff.dev/api/v1/online-shop"
+      );
 
-    const addToCart = (product) => {
-        const itemsIndex = cartItems.findIndex(item => item.id === product.id);
+    const products = [...data].map((product) => ({
+        title: product.title,
+        id: product.id,
+        image: product.imageUrl,
+        price: product.price,
+    }))
 
-        if (itemsIndex !== -1) {
-            const newCartItems = [...cartItems];
-            newCartItems[itemsIndex].quantity = 1;
-            setCartItems(newCartItems);
-            console.log(setCartItems)
-        } else {
-            setCartItems([...cartItems, {...product, quantity: 1}]);
-            console.log(setCartItems)
-        }
-    };
-    console.log(setCartItems)
-
+    console.log(products)
+    const [state, dispatch] = useReducer(reducer, {
+        products: products,
+        cart: []
+    })
 
     return (
-        <CartContext.Provider value={{cartItems, addToCart}}>
+        <CartContext.Provider value={{state, dispatch}}>
             {children}
         </CartContext.Provider>
     )
 }
 
 export default CartContextProvider;
+
+export const CartState = () => {
+    return useContext(CartContext);
+}
