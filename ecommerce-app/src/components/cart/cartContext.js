@@ -2,9 +2,9 @@ import React, { createContext, useContext, useReducer } from "react";
 import { Api } from "../api/api";
 import { reducer } from "./reducer";
 
-export const CartContext = createContext();
+export const Cart = createContext();
 
-const CartContextProvider = ({ children }) => {
+const CartContext = ({ children }) => {
     const { data } = Api(
         "https://api.noroff.dev/api/v1/online-shop"
       );
@@ -17,22 +17,21 @@ const CartContextProvider = ({ children }) => {
     }))
 
     console.log(products)
-    const [state, dispatch] = useReducer(reducer, {
-        products: products,
-        cart: []
-    })
 
-    console.log(state)
+    const initialState = { products: products, cart: [] }
+
+    console.log(initialState)
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
-        <CartContext.Provider value={{state, dispatch}}>
+        <Cart.Provider value={{state, dispatch}}>
             {children}
-        </CartContext.Provider>
+        </Cart.Provider>
     )
 }
 
-export default CartContextProvider;
+export default CartContext;
 
 export const CartState = () => {
-    return useContext(CartContext);
+    return useContext(Cart);
 }

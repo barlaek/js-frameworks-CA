@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Api } from "../api/api";
-import { CartContext } from "../cart/cartContext";
 
 export function Product() {
-    const { addToCart } = useContext(CartContext)
     let { id } = useParams();
 
     const { data, isLoading, isError } = Api(
@@ -37,7 +35,7 @@ export function Product() {
                     <div>{review.description}</div>
                 </div>
             ))}</div>
-            <button onClick={() => addToCart(data.id)}>Add to Cart</button>
+            {/* <button onClick={() => addToCart(data.id)}>Add to Cart</button> */}
         </div>
     );
 }

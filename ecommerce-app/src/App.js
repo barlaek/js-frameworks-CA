@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import CartContextProvider from "./components/cart/cartContext";
+import CartContext from "./components/cart/cartContext";
 import { Layout } from "./components/layout/layout";
 import { Home, Contact, CartContainer } from "./components/navigation/nav";
 import { Product } from "./components/products/product";
@@ -9,7 +9,7 @@ function App() {
 
   return (
   <div>
-    <CartContextProvider>
+    <CartContext>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}/>
@@ -18,7 +18,7 @@ function App() {
           <Route path="/:id" element={<Product />} />
         </Route>
       </Routes>
-    </CartContextProvider>
+    </CartContext>
   </div>
   )
 }
