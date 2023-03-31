@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Api } from "../api/api";
 import { useCartState } from "../cart/cartContext";
 
 export function Product() {
-
     const dispatch = useCartState();
 
     let { id } = useParams();
