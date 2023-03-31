@@ -38,7 +38,7 @@ export function Product() {
                     <div>{review.description}</div>
                 </div>
             ))}</div>
-            <button onClick={() => dispatch({type: 'addProduct', payload: data.id})}>Add to Cart</button>
+            <button onClick={() => dispatch({type: 'addProduct', payload: data})}>Add to Cart</button>
         </div>
     );
 }
