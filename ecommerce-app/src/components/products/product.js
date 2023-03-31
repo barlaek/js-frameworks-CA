@@ -1,8 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Api } from "../api/api";
+import { useCartState } from "../cart/cartContext";
 
 export function Product() {
+
+    const dispatch = useCartState();
+
     let { id } = useParams();
 
     const { data, isLoading, isError } = Api(
@@ -35,7 +39,7 @@ export function Product() {
                     <div>{review.description}</div>
                 </div>
             ))}</div>
-            {/* <button onClick={() => addToCart(data.id)}>Add to Cart</button> */}
+            <button onClick={() => dispatch({type: 'addProduct', payload: data.id})}>Add to Cart</button>
         </div>
     );
 }
