@@ -5,6 +5,7 @@ import { useCartState } from "../cart/cartContext";
 
 export function Product() {
     const dispatch = useCartState();
+    console.log(dispatch)
 
     let { id } = useParams();
 
@@ -38,7 +39,7 @@ export function Product() {
                     <div>{review.description}</div>
                 </div>
             ))}</div>
-            <button onClick={() => dispatch({type: 'addProduct', payload: data})}>Add to Cart</button>
+            <button onClick={() => dispatch.dispatch({type: 'addProduct', payload: data})}>Add to Cart</button>
         </div>
     );
 }
