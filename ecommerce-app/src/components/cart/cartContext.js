@@ -9,6 +9,7 @@ const CartContext = ({ children }) => {
     console.log(state)
 
     const [ queryState, queryDispatch] = useReducer(searchReducer, searchState);
+    console.log(queryState);
 
     return (
         <Cart.Provider value={{state, dispatch, queryState, queryDispatch}}>
