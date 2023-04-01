@@ -22,8 +22,8 @@ export function CartItems() {
             ))}
             <div key={state.state.total}>
                 <div>
-                    <h3>Total: {state.state.total}</h3>
-                    <button>Checkout</button>
+                    <h3>Total: {state.state.total}kr</h3>
+                    <button onClick={() => state.dispatch({type: 'clearCart'})}>Proceed to checkout</button>
                 </div>
             </div>
         </div>
