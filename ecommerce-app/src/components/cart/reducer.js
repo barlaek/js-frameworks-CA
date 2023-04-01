@@ -54,6 +54,9 @@ export const reducer = (state, action) => {
                 return currentTotal;
               }, 0);
               return { ...state, cart: cart, total: newTotal };
+
+            case 'changeQty':
+                return {...state, cart: state.cart.filter(c => c.id === action.payload.id ? c.quantity = action.payload.quantity : c.quantity)}
         
               case 'clearCart':
                 return { cart: [], total: 0}
