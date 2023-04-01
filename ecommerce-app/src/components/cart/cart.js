@@ -9,13 +9,13 @@ export function CartItems() {
         <div key={state.state}>
             {state.state.cart.map((prod) => (
                 <ul>
-                    <li>
+                    <li key={prod.id}>
                         <img src={prod.imageUrl} alt="product" />
                         <h3>{prod.title}</h3>
                         <p>{prod.price}</p>
-                        <p>{prod.quanitity}</p>
-                        <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod.id})}>-</button>
-                        <button onClick={() => state.dispatch({type: 'changeQty', payload: prod.id})}>+</button>
+                        <p>{prod.quantity}</p>
+                        <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod})}>-</button>
+                        <button onClick={() => state.dispatch({type: 'addProduct', payload: prod})}>+</button>
                         <button onClick={() => state.dispatch({type: 'clearCart'})}>Clear cart</button>
                     </li>
                 </ul>

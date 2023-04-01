@@ -55,8 +55,25 @@ export const reducer = (state, action) => {
               }, 0);
               return { ...state, cart: cart, total: newTotal };
 
-            case 'changeQty':
-                return {...state, cart: state.cart.filter(c => c.id === action.payload.id ? c.quantity = action.payload.quantity : c.quantity)}
+            // case 'addToQty':
+            //     cart = [...state.cart];
+            //     productIndex = cart.findIndex(
+            //         (product) => product.id === action.payload.id);
+            //     if(productIndex === 1) {
+            //         cart.push({ ...action.payload, quantity: 1});
+            //     } else {
+            //         cart = [
+            //             ...cart.slice(0, productIndex),
+            //             {...cart[productIndex], quantity: cart[productIndex].quantity + 1},
+            //             ...cart.slice(productIndex + 1),
+            //         ];
+            //     }
+    
+            //     newTotal = cart.reduce((currentTotal, product) => {
+            //         currentTotal += product.discountedPrice * product.quantity;
+            //         return currentTotal;
+            //     }, 0);
+            //     return {...state, cart: cart, total: newTotal};
         
               case 'clearCart':
                 return { cart: [], total: 0}
