@@ -39,13 +39,13 @@ export function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("fullName")} />
+            <input  placeholder="Full name" {...register("fullName")} />
             <p>{errors.fullName?.message}</p>
-            <input {...register("subject")} />
+            <input placeholder="Subject" {...register("subject")} />
             <p>{errors.subject?.message}</p>
-            <input {...register("email")} />
+            <input placeholder="Email" {...register("email")} />
             <p>{errors.email?.message}</p>
-            <input {...register("body")} />
+            <input placeholder="Your message" {...register("body")} />
             <p>{errors.body?.message}</p>
             <input type="submit" />
         </form>

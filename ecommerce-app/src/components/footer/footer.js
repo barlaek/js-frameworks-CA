@@ -1,3 +1,3 @@
 export function Footer() {
-    return <div>These are my feet</div>
+    return <div>Copyright © Bjørn Arne Læknes 2023</div>
 }

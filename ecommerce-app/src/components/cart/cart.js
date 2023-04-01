@@ -1,4 +1,5 @@
 import { useCartState } from "./cartContext";
+import { Link } from "react-router-dom";
 
 export function CartItems() {
     const state = useCartState();
@@ -23,7 +24,7 @@ export function CartItems() {
             <div key={state.state.total}>
                 <div>
                     <h3>Total: {state.state.total}kr</h3>
-                    <button onClick={() => state.dispatch({type: 'clearCart'})}>Proceed to checkout</button>
+                    <Link to="/checkout"><button>Proceed to checkout</button></Link>
                 </div>
             </div>
         </div>
