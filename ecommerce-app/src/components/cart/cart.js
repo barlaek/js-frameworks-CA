@@ -15,9 +15,10 @@ export function CartItems() {
                         <p>{prod.price}</p>
                     </div>
                     <div>
-                        <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod.id})}>-</button>
                         <p>{prod.quanitity}</p>
+                        <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod.id})}>-</button>
                         <button onClick={() => state.dispatch({type: 'addProduct', payload: prod.id})}>+</button>
+                        <button onClick={() => state.dispatch({type: 'clearCart'})}>Clear cart</button>
                     </div>
                 </div>
             ))}
