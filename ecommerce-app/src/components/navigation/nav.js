@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import Cart, { CartItems } from '../cart/cart'
-import { useCartState } from '../cart/cartContext'
+import { CartItems } from '../cart/cart'
 import { ContactForm } from '../contact/contact'
 import { Products } from '../products/products'
 import { Api } from '../api/api'
+import { SearchBar } from '../search/search'
 
 export function Home() {
     const { data, isLoading, isError } = Api(
@@ -46,6 +46,10 @@ export function CartContainer() {
 }
 
 export function Nav() {
+    const { data } = Api(
+        "https://api.noroff.dev/api/v1/online-shop"
+      );
+
     return (
         <nav>
             <ul>
@@ -54,6 +58,9 @@ export function Nav() {
                 </li>
                 <li>
                     <Link to='/contact'>Contact</Link>
+                </li>
+                <li>
+                    <SearchBar placeholder="Search products" product={data} />
                 </li>
                 <li>
                     <Link to='/cart'>Cart</Link>
