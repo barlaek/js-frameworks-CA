@@ -46,9 +46,6 @@ export function CartContainer() {
 }
 
 export function Nav() {
-    const { data } = Api(
-        "https://api.noroff.dev/api/v1/online-shop"
-      );
 
     return (
         <nav>
@@ -60,7 +57,7 @@ export function Nav() {
                     <Link to='/contact'>Contact</Link>
                 </li>
                 <li>
-                    <SearchBar placeholder="Search products" product={data} />
+                    <SearchBar />
                 </li>
                 <li>
                     <Link to='/cart'>Cart</Link>
