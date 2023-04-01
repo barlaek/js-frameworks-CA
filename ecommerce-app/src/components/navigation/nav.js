@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Cart from '../cart/cart'
+import Cart, { CartItems } from '../cart/cart'
 import { useCartState } from '../cart/cartContext'
 import { ContactForm } from '../contact/contact'
 import { Products } from '../products/products'
@@ -40,7 +40,7 @@ export function CartContainer() {
     return (
         <div>
             <div>Cart</div>
-            <div><Cart /></div>
+            <div><CartItems /></div>
         </div>
     )
 }

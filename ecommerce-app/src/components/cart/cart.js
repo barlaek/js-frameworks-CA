@@ -1,21 +1,15 @@
-// import React, { useReducer} from "react";
+import { useCartState } from "./cartContext";
 
-// const Cart = ({ cartItems }) => {
-//     const totalPrice = cartItems.useReducer((acc, cur) => acc + cur.price * cur.quantity );
+export function CartItems() {
+    const state = useCartState();
 
-//     return (
-//         <div>
-//             <h2>Cart</h2>
-//             <ul>
-//                 {cartItems.map(item => {
-//                     <li key={item.id}>
-//                         {item.title} - {item.quantity} x ${item.price}
-//                     </li>
-//                 })}
-//             </ul>
-//             <p>Total: ${totalPrice}</p>
-//         </div>
-//     )
-// }
+    console.log(state.state.cart)
 
-// export default Cart;
+    return (
+        <div key={state.state}>
+            {state.state.cart.map((prod) => (
+                <div>{prod.title}</div>
+            ))}
+        </div>
+    )
+}
