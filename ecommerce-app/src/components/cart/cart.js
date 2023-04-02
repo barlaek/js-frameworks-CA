@@ -1,5 +1,6 @@
 import { useCartState } from "./cartContext";
 import { Link } from "react-router-dom";
+import styles from './Cart.module.css'
 
 export function CartItems() {
     const state = useCartState();
@@ -7,17 +8,19 @@ export function CartItems() {
     console.log(state.state.cart)
 
     return (
-        <div key={state.state}>
+        <div key={state.state} className={styles.cart}>
             {state.state.cart.map((prod) => (
-                <ul>
-                    <li key={prod.id}>
-                        <img src={prod.imageUrl} alt="product" />
-                        <h3>{prod.title}</h3>
-                        <p>{prod.price}</p>
-                        <p>{prod.quantity}</p>
-                        <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod})}>-</button>
-                        <button onClick={() => state.dispatch({type: 'addProduct', payload: prod})}>+</button>
-                        <button onClick={() => state.dispatch({type: 'clearCart'})}>Clear cart</button>
+                <ul className={styles.cartContainer}>
+                    <li key={prod.id} className={styles.cartList}>
+                        <img src={prod.imageUrl} alt="product" className={styles.listImg}/>
+                        <div className={styles.listContent}>
+                            <h3 className={styles.productTitle}>{prod.title}</h3>
+                            <p className={styles.productTitle}>Price: {prod.price}</p>
+                            <p className={styles.productTitle}>Quantity: {prod.quantity}</p>
+                            <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod})}>-</button>
+                            <button onClick={() => state.dispatch({type: 'addProduct', payload: prod})}>+</button>
+                            <button onClick={() => state.dispatch({type: 'clearCart'})}>Clear cart</button>
+                        </div>
                     </li>
                 </ul>
             ))}

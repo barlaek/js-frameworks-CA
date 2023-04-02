@@ -1,0 +1,36 @@
+.cart {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 1300px;
+}
+
+.cartContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.cartList {
+    list-style: none;
+    display: flex;
+}
+
+.listImg {
+    max-height: 100px;
+    width: 100%;
+    object-fit: cover;
+    padding: 20px 10px;
+}
+
+.listContent {
+    display: flex;
+    padding: 20px 10px;
+    align-items: center;
+}
+
+.productTitle {
+    margin: 0px 30px;
+    padding: 0px 30px;
+}
