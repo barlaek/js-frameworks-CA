@@ -6,7 +6,7 @@ export function Products(props) {
 
     return (
         <div className={styles.card}>
-            <img className={styles.image} src={product.imageUrl} />
+            <img className={styles.image} src={product.imageUrl} alt="product" />
             <div className={styles.cardContent}>
                 <div className={styles.textBox}>
                     <h3 className={styles.cardText}>{product.title}</h3>
