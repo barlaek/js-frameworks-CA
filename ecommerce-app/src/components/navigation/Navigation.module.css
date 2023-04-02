@@ -3,6 +3,7 @@
     flex-direction: row;
     margin: 0 auto;
     padding: 1rem 2rem;
+    background-color: darkslategray;
 }
 
 .navbar {
@@ -14,9 +15,15 @@
 
 .navbarItems {
     list-style: none;
-    padding: 30px 20px;
+    padding: 28px 20px;
 }
 
 .none {
     text-decoration: none;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }

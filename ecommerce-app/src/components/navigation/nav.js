@@ -22,9 +22,11 @@ export function Home() {
     return (
         <div>
             <div>Home</div>
-            {data.map((product) => (
-                <Products product={product}/>
-            ))}
+            <div className={navigation.grid}>
+                {data.map((product) => (
+                    <Products product={product}/>
+                ))}
+            </div>
         </div>
     )
 }
