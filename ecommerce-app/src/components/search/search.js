@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Api } from "../api/api";
+import "./search.css";
 
 
 export function SearchBar() {
@@ -23,15 +24,16 @@ export function SearchBar() {
 
 
     return (
-        <div>
-            <div>
+        <div className="search">
+            <div className="searchInput">
                 <input type="text" placeholder="Search products" onChange={handleSearch} />
             </div>
-            <div>
+            <div className="searchResults">
                 {searchProducts.map((product) => {
-                    <div>
-                        <img src={product.imageUrl} alt="product" />
+                    <div className="data">
+                        {/* <img src={product.imageUrl} alt="product" /> */}
                         <div>{product.title}</div>
+                        {console.log(product.title)}
                     </div>
                 })}
             </div>
