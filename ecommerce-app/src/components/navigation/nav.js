@@ -62,10 +62,9 @@ export function Nav() {
                     <SearchBar />
                 </li>
                 <li>
-                    <Link to='/cart'>Cart</Link>
-                    {state.state.cart.map((qty) => {
+                    <Link to='/cart'>Cart {state.state.cart.map((qty) => {
                         return <div>{qty.quantity}</div>
-                    })}
+                    })}</Link>
                 </li>
             </ul>
         </nav>
