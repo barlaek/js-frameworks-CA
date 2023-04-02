@@ -31,3 +31,14 @@
     margin: 0 auto;
     padding: 20px 10px
 }
+
+.cartBtn {
+    display: flex;
+    padding: 2px 20px;
+    background-color: wheat;
+    color: black
+}
+
+.overlay {
+    margin-left: 5px;
+}

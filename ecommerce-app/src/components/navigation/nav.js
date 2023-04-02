@@ -65,9 +65,9 @@ export function Navigation() {
                     <SearchBar />
                 </li>
                 <li className={navigation.navbarItems}>
-                    <Link to='/cart' className={navigation.none}>Cart {state.state.cart.map((qty) => {
-                        return <div>{qty.quantity}</div>
-                    })}</Link>
+                    <Link to='/cart' className={navigation.none}><button className={navigation.cartBtn}>Cart {state.state.cart.map((qty) => {
+                        return <div className={navigation.overlay}>{qty.quantity}</div>
+                    })}</button></Link>
                 </li>
             </ul>
         </nav>
