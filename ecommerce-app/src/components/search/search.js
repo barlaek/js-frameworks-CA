@@ -15,9 +15,9 @@ export function SearchBar() {
             value.tags.map((tag) => {tag.toLowerCase().includes(searchWord.toLowerCase())});
         });
         if(searchProducts === "") {
-            setSearchProducts([]);
+            return setSearchProducts([]);
         } else {
-            setSearchProducts(newList)
+            return setSearchProducts(newList)
         }
     }
     console.log(searchProducts)
@@ -30,11 +30,11 @@ export function SearchBar() {
             </div>
             <div className="searchResults">
                 {searchProducts.map((product) => {
-                    <div className="data">
+                    return <div className="data">
                         {/* <img src={product.imageUrl} alt="product" /> */}
-                        <div>{product.title}</div>
-                        {console.log(product.title)}
-                    </div>
+                                <div>{product.title}</div>
+                                {console.log(product.title)}
+                            </div>
                 })}
             </div>
         </div>

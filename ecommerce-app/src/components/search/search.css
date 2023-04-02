@@ -6,6 +6,7 @@
 }
 
 .data {
+    display: block;
     margin-top: 5px;
     color: black;
 }
