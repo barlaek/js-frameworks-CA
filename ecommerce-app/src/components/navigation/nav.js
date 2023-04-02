@@ -5,6 +5,7 @@ import { Products } from '../products/products'
 import { Api } from '../api/api'
 import { SearchBar } from '../search/search'
 import { useCartState } from '../cart/cartContext'
+import navigation from './Navigation.module.css'
 
 export function Home() {
     const { data, isLoading, isError } = Api(
@@ -46,36 +47,28 @@ export function CartContainer() {
     )
 }
 
-export function Nav() {
+export function Navigation() {
     const state = useCartState();
 
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Link to='/'>Home</Link>
+        <nav className={navigation.header}>
+            <Link to='/' className={navigation.none}><h1>The Cart & The Shop</h1></Link>
+            <ul className={navigation.navbar}>
+                <li className={navigation.navbarItems}>
+                    <Link to='/' className={navigation.none}>Home</Link>
                 </li>
-                <li>
-                    <Link to='/contact'>Contact</Link>
+                <li className={navigation.navbarItems}>
+                    <Link to='/contact' className={navigation.none}>Contact</Link>
                 </li>
-                <li>
+                <li className={navigation.navbarItems}>
                     <SearchBar />
                 </li>
-                <li>
-                    <Link to='/cart'>Cart {state.state.cart.map((qty) => {
+                <li className={navigation.navbarItems}>
+                    <Link to='/cart' className={navigation.none}>Cart {state.state.cart.map((qty) => {
                         return <div>{qty.quantity}</div>
                     })}</Link>
                 </li>
             </ul>
         </nav>
-    )
-}
-
-export function Header() {
-    return (
-        <header>
-            <div>Header</div>
-            <Nav />
-        </header>
     )
 }

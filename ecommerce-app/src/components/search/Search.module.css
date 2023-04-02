@@ -1,0 +1,16 @@
+/* .searchResults {
+    background-color: white;
+    padding: .5rem;
+    height: 5rem;
+    width: 15rem;
+} */
+
+.data {
+    display: block;
+    color: black;
+    text-decoration: none
+}
+
+.emptyArray {
+    display: none;
+}

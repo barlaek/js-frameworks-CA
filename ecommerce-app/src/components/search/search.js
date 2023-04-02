@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Api } from "../api/api";
 import { Link } from "react-router-dom";
-import "./search.css";
+import styles from "./Search.module.css";
 
 
 export function SearchBar() {
@@ -18,7 +18,7 @@ export function SearchBar() {
         if(searchProducts === "") {
             return setSearchProducts([]);
         } else {
-            return setSearchProducts(newList)
+            return setSearchProducts(newList);
         }
     }
     console.log(searchProducts)
@@ -26,12 +26,12 @@ export function SearchBar() {
 
     return (
         <div className="search">
-            <div className="searchInput">
+            <div className={styles.data}>
                 <input type="text" placeholder="Search products" onChange={handleSearch} />
             </div>
-            <div className="searchResults">
+            <div className={styles.searchResults}>
                 {searchProducts.map((product) => {
-                    return <div className="data">
+                    return <div className={styles.data}>
                         {/* <img src={product.imageUrl} alt="product" /> */}
                                 <Link to={`/${product.id}`}>{product.title}</Link>
                                 {console.log(product.title)}

@@ -1,4 +1,4 @@
-import { Header } from "../navigation/nav";
+import { Navigation } from "../navigation/nav";
 import { Outlet } from "react-router-dom";
 import { Footer } from "../footer/footer";
 
@@ -6,7 +6,7 @@ import { Footer } from "../footer/footer";
 export function Layout() {
     return (
         <div>
-            <Header />
+            <Navigation />
             <Outlet />
             <Footer />
         </div>

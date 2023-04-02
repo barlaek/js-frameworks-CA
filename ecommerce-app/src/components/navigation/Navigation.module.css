@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+}
+
+.navbarItems {
+    list-style: none;
+    padding: 30px 20px;
+}
+
+.none {
+    text-decoration: none;
+}
