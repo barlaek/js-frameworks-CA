@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    background-color: darkslategray;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+}
+
+.navbarItems {
+    list-style: none;
+    padding: 28px 20px;
+}
+
+.none {
+    text-decoration: none;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1300px;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 20px 10px
+}
+
+.cartBtn {
+    display: flex;
+    padding: 2px 20px;
+    background-color: wheat;
+    color: black
+}
+
+.overlay {
+    margin-left: 5px;
+}

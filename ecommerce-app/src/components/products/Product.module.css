@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+    background-color: wheat;
+    border: 2px black;
+    border-radius: .5rem;
+
+}
+
+.image {
+    object-fit: cover;
+    min-height: 200px;
+    border-radius: .5rem;
+}
+
+.cardContent {
+    padding: .5rem;
+}
+
+.textBox {
+    padding-bottom: 5px;
+}
+
+.cardText {
+    margin: 2px;
+}
+
+.cardBtn {
+    padding: .75rem 2rem;
+    background-color: darkslategray;
+    color: white;
+    cursor: pointer;
+}
+
+.singleProd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 10px;
+    max-height: 600px;
+}
+
+.singleProdImg {
+    object-fit: cover;
+    padding-right: 10px;
+}
+
+.singleProdText {
+    padding: 10px
+}
