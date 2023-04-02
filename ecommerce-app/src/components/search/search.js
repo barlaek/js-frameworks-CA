@@ -23,13 +23,21 @@ export function SearchBar() {
         }
     }
 
+    const clearInput = () => {
+        setSearchProducts([]);
+    }
+
 
     return (
         <div className="search">
             <div className={styles.inputArea}>
                 <input type="text" placeholder="Search products" onChange={handleSearch} className={styles.input}/>
-                <div>
-                    <SearchIcon className={styles.SearchIcon}/>
+                <div className={styles.SearchIcon}>
+                    {searchProducts.length === 0 ? (
+                        <SearchIcon />
+                    ) : (
+                        <CloseIcon id="clearBtn" onClick={clearInput}/>
+                    )}
                 </div>
             </div>
             {searchProducts.length != 0 && (
