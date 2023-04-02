@@ -1,6 +1,7 @@
 import { useCartState } from "./cartContext";
 import { Link } from "react-router-dom";
 import styles from './Cart.module.css'
+import button from '../products/Product.module.css'
 
 export function CartItems() {
     const state = useCartState();
@@ -27,7 +28,7 @@ export function CartItems() {
             <div key={state.state.total}>
                 <div>
                     <h3>Total: {state.state.total}kr</h3>
-                    <Link to="/checkout"><button>Proceed to checkout</button></Link>
+                    <Link to="/checkout"><button className={button.cardBtn}>Proceed to checkout</button></Link>
                 </div>
             </div>
         </div>
