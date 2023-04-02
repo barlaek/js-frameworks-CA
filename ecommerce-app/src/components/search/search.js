@@ -13,8 +13,7 @@ export function SearchBar() {
     const handleSearch = (event) => {
         const searchWord = event.target.value;
         const newList = data.filter((value) => {
-            return value.title.toLowerCase().includes(searchWord.toLowerCase()) &&
-            value.tags.map((tag) => {tag.toLowerCase().includes(searchWord.toLowerCase())});
+            return value.title.toLowerCase().includes(searchWord.toLowerCase());
         });
         if(searchProducts === "") {
             return setSearchProducts([]);
