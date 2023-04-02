@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Api } from "../api/api";
+import { Link } from "react-router-dom";
 import "./search.css";
 
 
@@ -32,7 +33,7 @@ export function SearchBar() {
                 {searchProducts.map((product) => {
                     return <div className="data">
                         {/* <img src={product.imageUrl} alt="product" /> */}
-                                <div>{product.title}</div>
+                                <Link to={`/${product.id}`}>{product.title}</Link>
                                 {console.log(product.title)}
                             </div>
                 })}

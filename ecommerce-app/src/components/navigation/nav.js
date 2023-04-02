@@ -4,6 +4,7 @@ import { ContactForm } from '../contact/contact'
 import { Products } from '../products/products'
 import { Api } from '../api/api'
 import { SearchBar } from '../search/search'
+import { useCartState } from '../cart/cartContext'
 
 export function Home() {
     const { data, isLoading, isError } = Api(
@@ -46,6 +47,7 @@ export function CartContainer() {
 }
 
 export function Nav() {
+    const state = useCartState();
 
     return (
         <nav>
@@ -61,6 +63,9 @@ export function Nav() {
                 </li>
                 <li>
                     <Link to='/cart'>Cart</Link>
+                    {state.state.cart.map((qty) => {
+                        return <div>{qty.quantity}</div>
+                    })}
                 </li>
             </ul>
         </nav>
