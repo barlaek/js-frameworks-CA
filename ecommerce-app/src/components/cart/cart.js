@@ -6,8 +6,6 @@ import button from '../products/Product.module.css'
 export function CartItems() {
     const state = useCartState();
 
-    console.log(state.state.cart)
-
     return (
         <div key={state.state} className={styles.cart}>
             {state.state.cart.map((prod) => (

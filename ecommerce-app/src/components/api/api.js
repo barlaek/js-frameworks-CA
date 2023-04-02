@@ -11,9 +11,7 @@ export function Api(url) {
                 setLoad(true);
                 setError(false);
                 const fetchedData = await fetch(url);
-                console.log(fetchedData)
                 const json = await fetchedData.json();
-                console.log(json)
                 setData(json);
             } catch (error) {
                 console.log(error);

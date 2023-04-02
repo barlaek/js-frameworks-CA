@@ -16,12 +16,15 @@ export function SearchBar() {
             value.tags.map((tag) => {tag.toLowerCase().includes(searchWord.toLowerCase())});
         });
         if(searchProducts === "") {
-            return setSearchProducts([]);
+            return clearInput();
         } else {
             return setSearchProducts(newList);
         }
+
+        function clearInput() {
+            setSearchProducts([]);
+        }
     }
-    console.log(searchProducts)
 
 
     return (
