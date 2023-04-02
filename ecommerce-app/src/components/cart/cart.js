@@ -17,9 +17,9 @@ export function CartItems() {
                             <h3 className={styles.productTitle}>{prod.title}</h3>
                             <p className={styles.productTitle}>Price: {prod.price}</p>
                             <p className={styles.productTitle}>Quantity: {prod.quantity}</p>
-                            <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod})}>-</button>
-                            <button onClick={() => state.dispatch({type: 'addProduct', payload: prod})}>+</button>
-                            <button onClick={() => state.dispatch({type: 'clearCart'})}>Clear cart</button>
+                            <button onClick={() => state.dispatch({type: 'removeProduct', payload: prod})} className={styles.prodBtn}>-</button>
+                            <button onClick={() => state.dispatch({type: 'addProduct', payload: prod})} className={styles.prodBtn}>+</button>
+                            <button onClick={() => state.dispatch({type: 'clearCart'})} className={styles.prodBtn}>Clear cart</button>
                         </div>
                     </li>
                 </ul>
