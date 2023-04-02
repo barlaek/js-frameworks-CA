@@ -21,7 +21,6 @@ export function Home() {
       }
     return (
         <div>
-            <div>Home</div>
             <div className={navigation.grid}>
                 {data.map((product) => (
                     <Products product={product}/>
