@@ -40,7 +40,7 @@ export function SearchBar() {
                     )}
                 </div>
             </div>
-            {searchProducts.length != 0 && (
+            {searchProducts.length !== 0 && (
             <div className={styles.searchResults}>
                 {searchProducts.map((product) => {
                     return <div className={styles.data}>
