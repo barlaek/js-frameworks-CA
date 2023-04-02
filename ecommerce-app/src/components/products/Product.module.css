@@ -34,3 +34,20 @@
     color: white;
     cursor: pointer;
 }
+
+.singleProd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 10px;
+    max-height: 600px;
+}
+
+.singleProdImg {
+    object-fit: cover;
+    padding-right: 10px;
+}
+
+.singleProdText {
+    padding: 10px
+}

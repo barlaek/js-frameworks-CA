@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Api } from "../api/api";
 import { useCartState } from "../cart/cartContext";
+import styles from './Product.module.css'
 
 export function Product() {
     const dispatch = useCartState();
@@ -27,19 +28,25 @@ export function Product() {
 
     return (
         <div>
-            <img src={data.imageUrl} alt="product"/>
-            <div>{data.title}</div>
-            <div>{data.description}</div>
-            <div>{data.rating}</div>
-            <div>{data.price}</div>
-            <div>{data.reviews.map((review) => (
-                <div>
-                    <div>{review.username}</div>
-                    <div>{review.rating}</div>
-                    <div>{review.description}</div>
+            <div className={styles.singleProd}>
+                <img src={data.imageUrl} alt="product" className={styles.singleProdImg}/>
+                <div className={styles.singleProdText}>
+                    <h2>{data.title}</h2>
+                    <h3>Description:</h3> 
+                    <p>{data.description}</p>
+                    <p>Rated: {data.rating}/5</p>
+                    <p>Price: {data.price}kr</p>
+                    <button className={styles.cardBtn} onClick={() => dispatch.dispatch({type: 'addProduct', payload: data})}>Add to Cart</button>
+                    <h3>Reviews</h3>
+                    <div>{data.reviews.map((review) => (
+                        <div>
+                            <h4>{review.username}</h4>
+                            <div>Rated this product: {review.rating}/5</div>
+                            <div>{review.description}</div>
+                        </div>
+                    ))}</div>
                 </div>
-            ))}</div>
-            <button onClick={() => dispatch.dispatch({type: 'addProduct', payload: data})}>Add to Cart</button>
+            </div>
         </div>
     );
 }
