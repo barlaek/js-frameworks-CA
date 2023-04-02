@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Api } from "../api/api";
 import { Link } from "react-router-dom";
 import styles from "./Search.module.css";
-
+import CloseIcon from '@mui/icons-material/Close';
+import SearchIcon from '@mui/icons-material/Search';
 
 export function SearchBar() {
     const [searchProducts, setSearchProducts] = useState([])
@@ -16,31 +17,31 @@ export function SearchBar() {
             value.tags.map((tag) => {tag.toLowerCase().includes(searchWord.toLowerCase())});
         });
         if(searchProducts === "") {
-            return clearInput();
+            return setSearchProducts([]);
         } else {
             return setSearchProducts(newList);
-        }
-
-        function clearInput() {
-            setSearchProducts([]);
         }
     }
 
 
     return (
         <div className="search">
-            <div className={styles.data}>
-                <input type="text" placeholder="Search products" onChange={handleSearch} />
+            <div className={styles.inputArea}>
+                <input type="text" placeholder="Search products" onChange={handleSearch} className={styles.input}/>
+                <div>
+                    <SearchIcon className={styles.SearchIcon}/>
+                </div>
             </div>
+            {searchProducts.length != 0 && (
             <div className={styles.searchResults}>
                 {searchProducts.map((product) => {
                     return <div className={styles.data}>
-                        {/* <img src={product.imageUrl} alt="product" /> */}
-                                <Link to={`/${product.id}`}>{product.title}</Link>
+                                <Link to={`/${product.id}`} className={styles.data}>{product.title}</Link>
                                 {console.log(product.title)}
                             </div>
                 })}
             </div>
+            )}
         </div>
     )
 }
